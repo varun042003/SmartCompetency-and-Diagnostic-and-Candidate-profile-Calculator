@@ -1,20 +1,26 @@
 import { Link } from "react-router-dom";
-import { 
-  Brain, 
-  Target, 
-  TrendingUp, 
-  FileText, 
-  Users, 
+import {
+  Brain,
+  Target,
+  TrendingUp,
+  FileText,
+  Users,
   Award,
   Star,
   ChevronRight,
   CheckCircle,
   BarChart3,
   Lightbulb,
-  Briefcase
+  Briefcase,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Index() {
@@ -22,39 +28,45 @@ export default function Index() {
     {
       icon: Brain,
       title: "Smart Competency Diagnostic",
-      description: "Advanced AI-powered assessments that evaluate your true skills and competencies across multiple domains.",
-      color: "text-primary"
+      description:
+        "Advanced AI-powered assessments that evaluate your true skills and competencies across multiple domains.",
+      color: "text-primary",
     },
     {
       icon: Target,
       title: "Personalized Profile Score",
-      description: "Get a comprehensive score that reflects your overall competency and market readiness.",
-      color: "text-accent"
+      description:
+        "Get a comprehensive score that reflects your overall competency and market readiness.",
+      color: "text-accent",
     },
     {
       icon: TrendingUp,
       title: "AI Job Recommendations",
-      description: "Intelligent matching system that connects you with relevant job opportunities based on your skills.",
-      color: "text-info"
+      description:
+        "Intelligent matching system that connects you with relevant job opportunities based on your skills.",
+      color: "text-info",
     },
     {
       icon: Lightbulb,
       title: "Skill Gap Analysis",
-      description: "Identify missing competencies and get a clear roadmap for professional development.",
-      color: "text-warning"
+      description:
+        "Identify missing competencies and get a clear roadmap for professional development.",
+      color: "text-warning",
     },
     {
       icon: FileText,
       title: "Smart Resume Builder",
-      description: "Generate professional resumes automatically based on your competency profile and achievements.",
-      color: "text-success"
+      description:
+        "Generate professional resumes automatically based on your competency profile and achievements.",
+      color: "text-success",
     },
     {
       icon: BarChart3,
       title: "Market Insights Dashboard",
-      description: "Real-time analytics on industry trends, salary ranges, and in-demand skills.",
-      color: "text-primary"
-    }
+      description:
+        "Real-time analytics on industry trends, salary ranges, and in-demand skills.",
+      color: "text-primary",
+    },
   ];
 
   const benefits = [
@@ -63,7 +75,7 @@ export default function Index() {
     "Industry-aligned skill development",
     "Professional resume generation",
     "Real-time market insights",
-    "Progress tracking & certifications"
+    "Progress tracking & certifications",
   ];
 
   const testimonials = [
@@ -71,23 +83,26 @@ export default function Index() {
       name: "Sarah Chen",
       role: "Software Engineer",
       company: "TechCorp",
-      quote: "This platform helped me identify my skill gaps and land my dream job in just 3 months!",
-      rating: 5
+      quote:
+        "This platform helped me identify my skill gaps and land my dream job in just 3 months!",
+      rating: 5,
     },
     {
       name: "Michael Rodriguez",
       role: "Product Manager",
       company: "InnovateCo",
-      quote: "The AI recommendations were spot-on. I discovered career paths I never considered before.",
-      rating: 5
+      quote:
+        "The AI recommendations were spot-on. I discovered career paths I never considered before.",
+      rating: 5,
     },
     {
       name: "Emily Johnson",
       role: "Data Analyst",
       company: "DataFlow",
-      quote: "The competency diagnostic gave me confidence and a clear development roadmap.",
-      rating: 5
-    }
+      quote:
+        "The competency diagnostic gave me confidence and a clear development roadmap.",
+      rating: 5,
+    },
   ];
 
   return (
@@ -106,8 +121,9 @@ export default function Index() {
               </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-3xl mx-auto">
-              Advanced AI-powered competency diagnostics that evaluate your skills, identify opportunities, 
-              and provide personalized recommendations to accelerate your career growth.
+              Advanced AI-powered competency diagnostics that evaluate your
+              skills, identify opportunities, and provide personalized
+              recommendations to accelerate your career growth.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild size="lg" className="text-lg px-8 py-6">
@@ -125,8 +141,12 @@ export default function Index() {
                 <div className="aspect-video rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 flex items-center justify-center">
                   <div className="text-center">
                     <Brain className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <p className="text-lg font-semibold text-foreground">Interactive Dashboard Preview</p>
-                    <p className="text-muted-foreground">See your competency analysis in action</p>
+                    <p className="text-lg font-semibold text-foreground">
+                      Interactive Dashboard Preview
+                    </p>
+                    <p className="text-muted-foreground">
+                      See your competency analysis in action
+                    </p>
                   </div>
                 </div>
               </div>
@@ -143,17 +163,22 @@ export default function Index() {
               Everything you need to advance your career
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Our comprehensive platform combines AI-powered assessments with actionable insights 
-              to help you achieve your professional goals.
+              Our comprehensive platform combines AI-powered assessments with
+              actionable insights to help you achieve your professional goals.
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-7xl">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {features.map((feature, index) => (
-                <Card key={index} className="relative overflow-hidden border-0 bg-card/50 backdrop-blur hover:bg-card/80 transition-all duration-300">
+                <Card
+                  key={index}
+                  className="relative overflow-hidden border-0 bg-card/50 backdrop-blur hover:bg-card/80 transition-all duration-300"
+                >
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      <div className={`p-3 rounded-xl bg-secondary ${feature.color}`}>
+                      <div
+                        className={`p-3 rounded-xl bg-secondary ${feature.color}`}
+                      >
                         <feature.icon className="h-6 w-6" />
                       </div>
                       <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -180,14 +205,16 @@ export default function Index() {
                 Why choose our platform?
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Join thousands of professionals who have transformed their careers 
-                with our intelligent competency diagnostic system.
+                Join thousands of professionals who have transformed their
+                careers with our intelligent competency diagnostic system.
               </p>
               <div className="mt-10 space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
-                    <span className="text-foreground font-medium">{benefit}</span>
+                    <span className="text-foreground font-medium">
+                      {benefit}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -215,7 +242,10 @@ export default function Index() {
                           <span>92%</span>
                         </div>
                         <div className="w-full bg-secondary rounded-full h-2">
-                          <div className="bg-primary h-2 rounded-full" style={{width: '92%'}}></div>
+                          <div
+                            className="bg-primary h-2 rounded-full"
+                            style={{ width: "92%" }}
+                          ></div>
                         </div>
                       </div>
                       <div>
@@ -224,7 +254,10 @@ export default function Index() {
                           <span>78%</span>
                         </div>
                         <div className="w-full bg-secondary rounded-full h-2">
-                          <div className="bg-accent h-2 rounded-full" style={{width: '78%'}}></div>
+                          <div
+                            className="bg-accent h-2 rounded-full"
+                            style={{ width: "78%" }}
+                          ></div>
                         </div>
                       </div>
                       <div>
@@ -233,7 +266,10 @@ export default function Index() {
                           <span>85%</span>
                         </div>
                         <div className="w-full bg-secondary rounded-full h-2">
-                          <div className="bg-info h-2 rounded-full" style={{width: '85%'}}></div>
+                          <div
+                            className="bg-info h-2 rounded-full"
+                            style={{ width: "85%" }}
+                          ></div>
                         </div>
                       </div>
                     </div>
@@ -262,13 +298,22 @@ export default function Index() {
                 <CardContent className="p-6">
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-warning text-warning" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-warning text-warning"
+                      />
                     ))}
                   </div>
-                  <p className="text-foreground mb-4 italic">"{testimonial.quote}"</p>
+                  <p className="text-foreground mb-4 italic">
+                    "{testimonial.quote}"
+                  </p>
                   <div>
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role} at {testimonial.company}</p>
+                    <p className="font-semibold text-foreground">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role} at {testimonial.company}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -285,7 +330,7 @@ export default function Index() {
               Ready to unlock your potential?
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Start your competency assessment today and take the first step 
+              Start your competency assessment today and take the first step
               towards accelerating your career growth.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">

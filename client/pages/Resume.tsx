@@ -1,39 +1,45 @@
 import { Link } from "react-router-dom";
-import { 
-  FileText, 
-  Download, 
+import {
+  FileText,
+  Download,
   Eye,
   ChevronRight,
   Palette,
   Layout,
   Type,
-  Star
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Resume() {
   const templates = [
     {
       name: "Professional",
       description: "Clean and modern design perfect for corporate roles",
-      popular: true
+      popular: true,
     },
     {
       name: "Creative",
       description: "Eye-catching layout for design and creative positions",
-      popular: false
+      popular: false,
     },
     {
       name: "Minimal",
       description: "Simple and elegant format that highlights content",
-      popular: true
+      popular: true,
     },
     {
       name: "Executive",
       description: "Sophisticated design for senior-level positions",
-      popular: false
-    }
+      popular: false,
+    },
   ];
 
   return (
@@ -43,7 +49,8 @@ export default function Resume() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Resume Builder</h1>
           <p className="text-muted-foreground">
-            Create professional resumes automatically based on your competency profile
+            Create professional resumes automatically based on your competency
+            profile
           </p>
         </div>
 
@@ -53,7 +60,9 @@ export default function Resume() {
             <CardHeader className="text-center">
               <Download className="h-8 w-8 text-primary mx-auto mb-2" />
               <CardTitle className="text-lg">Quick Download</CardTitle>
-              <CardDescription>Download your latest resume instantly</CardDescription>
+              <CardDescription>
+                Download your latest resume instantly
+              </CardDescription>
             </CardHeader>
           </Card>
           <Card className="cursor-pointer hover:bg-accent/50 transition-colors">
@@ -67,7 +76,9 @@ export default function Resume() {
             <CardHeader className="text-center">
               <Palette className="h-8 w-8 text-info mx-auto mb-2" />
               <CardTitle className="text-lg">Customize Design</CardTitle>
-              <CardDescription>Choose from professional templates</CardDescription>
+              <CardDescription>
+                Choose from professional templates
+              </CardDescription>
             </CardHeader>
           </Card>
         </div>
@@ -77,13 +88,17 @@ export default function Resume() {
           <CardHeader>
             <CardTitle>Choose a Template</CardTitle>
             <CardDescription>
-              Select from our collection of professionally designed resume templates
+              Select from our collection of professionally designed resume
+              templates
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {templates.map((template, index) => (
-                <Card key={index} className="cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+                <Card
+                  key={index}
+                  className="cursor-pointer hover:ring-2 hover:ring-primary transition-all"
+                >
                   <CardHeader className="relative">
                     {template.popular && (
                       <div className="absolute -top-2 -right-2">
@@ -97,7 +112,9 @@ export default function Resume() {
                       <Layout className="h-8 w-8 text-muted-foreground" />
                     </div>
                     <CardTitle className="text-base">{template.name}</CardTitle>
-                    <CardDescription className="text-sm">{template.description}</CardDescription>
+                    <CardDescription className="text-sm">
+                      {template.description}
+                    </CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -111,10 +128,13 @@ export default function Resume() {
             <div className="mx-auto w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4">
               <FileText className="h-8 w-8 text-muted-foreground" />
             </div>
-            <CardTitle className="text-2xl">Smart Resume Builder Coming Soon</CardTitle>
+            <CardTitle className="text-2xl">
+              Smart Resume Builder Coming Soon
+            </CardTitle>
             <CardDescription className="max-w-md mx-auto">
-              Our AI-powered resume builder will automatically generate professional resumes 
-              based on your competency assessment and career goals.
+              Our AI-powered resume builder will automatically generate
+              professional resumes based on your competency assessment and
+              career goals.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -124,28 +144,36 @@ export default function Resume() {
                   <FileText className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-medium">Auto-Generated Content</h4>
-                    <p className="text-sm text-muted-foreground">Smart descriptions based on your skills</p>
+                    <p className="text-sm text-muted-foreground">
+                      Smart descriptions based on your skills
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Palette className="h-5 w-5 text-accent mt-0.5" />
                   <div>
                     <h4 className="font-medium">Professional Templates</h4>
-                    <p className="text-sm text-muted-foreground">Industry-specific design options</p>
+                    <p className="text-sm text-muted-foreground">
+                      Industry-specific design options
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Type className="h-5 w-5 text-info mt-0.5" />
                   <div>
                     <h4 className="font-medium">ATS Optimization</h4>
-                    <p className="text-sm text-muted-foreground">Optimized for applicant tracking systems</p>
+                    <p className="text-sm text-muted-foreground">
+                      Optimized for applicant tracking systems
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Download className="h-5 w-5 text-warning mt-0.5" />
                   <div>
                     <h4 className="font-medium">Multiple Formats</h4>
-                    <p className="text-sm text-muted-foreground">PDF, Word, and web formats</p>
+                    <p className="text-sm text-muted-foreground">
+                      PDF, Word, and web formats
+                    </p>
                   </div>
                 </div>
               </div>

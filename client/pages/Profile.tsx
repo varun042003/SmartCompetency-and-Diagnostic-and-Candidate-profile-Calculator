@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom";
-import { 
-  User, 
-  Mail, 
-  MapPin, 
+import {
+  User,
+  Mail,
+  MapPin,
   Calendar,
   Award,
   ChevronRight,
   Edit,
   Download,
-  Settings
+  Settings,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
@@ -64,21 +70,31 @@ export default function Profile() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="cursor-pointer hover:bg-accent/50 transition-colors" asChild>
+          <Card
+            className="cursor-pointer hover:bg-accent/50 transition-colors"
+            asChild
+          >
             <Link to="/resume">
               <CardHeader className="text-center">
                 <Download className="h-8 w-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">Download Resume</CardTitle>
-                <CardDescription>Get your AI-generated professional resume</CardDescription>
+                <CardDescription>
+                  Get your AI-generated professional resume
+                </CardDescription>
               </CardHeader>
             </Link>
           </Card>
-          <Card className="cursor-pointer hover:bg-accent/50 transition-colors" asChild>
+          <Card
+            className="cursor-pointer hover:bg-accent/50 transition-colors"
+            asChild
+          >
             <Link to="/diagnostic">
               <CardHeader className="text-center">
                 <Award className="h-8 w-8 text-accent mx-auto mb-2" />
                 <CardTitle className="text-lg">Retake Assessment</CardTitle>
-                <CardDescription>Update your competency profile</CardDescription>
+                <CardDescription>
+                  Update your competency profile
+                </CardDescription>
               </CardHeader>
             </Link>
           </Card>
@@ -97,10 +113,13 @@ export default function Profile() {
             <div className="mx-auto w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4">
               <User className="h-8 w-8 text-muted-foreground" />
             </div>
-            <CardTitle className="text-2xl">Detailed Profile Coming Soon</CardTitle>
+            <CardTitle className="text-2xl">
+              Detailed Profile Coming Soon
+            </CardTitle>
             <CardDescription className="max-w-md mx-auto">
-              Your comprehensive profile will include competency scores, skill breakdowns, 
-              achievement badges, and detailed career development recommendations.
+              Your comprehensive profile will include competency scores, skill
+              breakdowns, achievement badges, and detailed career development
+              recommendations.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -110,28 +129,36 @@ export default function Profile() {
                   <Award className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-medium">Competency Scores</h4>
-                    <p className="text-sm text-muted-foreground">Detailed breakdown by skill category</p>
+                    <p className="text-sm text-muted-foreground">
+                      Detailed breakdown by skill category
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <User className="h-5 w-5 text-accent mt-0.5" />
                   <div>
                     <h4 className="font-medium">Achievement Badges</h4>
-                    <p className="text-sm text-muted-foreground">Certificates and milestones</p>
+                    <p className="text-sm text-muted-foreground">
+                      Certificates and milestones
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Calendar className="h-5 w-5 text-info mt-0.5" />
                   <div>
                     <h4 className="font-medium">Progress Timeline</h4>
-                    <p className="text-sm text-muted-foreground">Track your development journey</p>
+                    <p className="text-sm text-muted-foreground">
+                      Track your development journey
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Settings className="h-5 w-5 text-warning mt-0.5" />
                   <div>
                     <h4 className="font-medium">Personalized Goals</h4>
-                    <p className="text-sm text-muted-foreground">Custom career objectives</p>
+                    <p className="text-sm text-muted-foreground">
+                      Custom career objectives
+                    </p>
                   </div>
                 </div>
               </div>

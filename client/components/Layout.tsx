@@ -2,7 +2,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Brain, Menu, X, User, Settings, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useState } from "react";
 
@@ -65,7 +71,10 @@ export default function Layout({ children }: LayoutProps) {
             <div className="hidden md:flex items-center space-x-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                  <Button
+                    variant="ghost"
+                    className="relative h-8 w-8 rounded-full"
+                  >
                     <Avatar className="h-8 w-8">
                       <AvatarFallback>JD</AvatarFallback>
                     </Avatar>
@@ -122,7 +131,9 @@ export default function Layout({ children }: LayoutProps) {
                         </Avatar>
                         <div>
                           <p className="text-sm font-medium">John Doe</p>
-                          <p className="text-xs text-muted-foreground">john@example.com</p>
+                          <p className="text-xs text-muted-foreground">
+                            john@example.com
+                          </p>
                         </div>
                       </div>
                       <div className="mt-2 space-y-1">
@@ -153,9 +164,7 @@ export default function Layout({ children }: LayoutProps) {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-1">
-        {children}
-      </main>
+      <main className="flex-1">{children}</main>
 
       {/* Footer */}
       <footer className="border-t bg-background">
@@ -169,26 +178,83 @@ export default function Layout({ children }: LayoutProps) {
                 <span className="font-bold text-xl">CompetencyPro</span>
               </div>
               <p className="text-muted-foreground max-w-md">
-                Advanced AI-powered competency diagnostics that evaluate your skills, 
-                identify opportunities, and provide personalized recommendations to accelerate your career growth.
+                Advanced AI-powered competency diagnostics that evaluate your
+                skills, identify opportunities, and provide personalized
+                recommendations to accelerate your career growth.
               </p>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Platform</h3>
               <ul className="space-y-2">
-                <li><Link to="/diagnostic" className="text-muted-foreground hover:text-foreground">Assessment</Link></li>
-                <li><Link to="/dashboard" className="text-muted-foreground hover:text-foreground">Dashboard</Link></li>
-                <li><Link to="/profile" className="text-muted-foreground hover:text-foreground">Profile</Link></li>
-                <li><Link to="/resume" className="text-muted-foreground hover:text-foreground">Resume Builder</Link></li>
+                <li>
+                  <Link
+                    to="/diagnostic"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Assessment
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/profile"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/resume"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Resume Builder
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-muted-foreground hover:text-foreground">Help Center</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-foreground">Contact Us</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-foreground">Privacy Policy</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-foreground">Terms of Service</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Terms of Service
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
