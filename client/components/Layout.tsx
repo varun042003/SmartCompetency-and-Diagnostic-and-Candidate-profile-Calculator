@@ -19,7 +19,18 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<any | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('cp_current');
+      setCurrentUser(raw ? JSON.parse(raw) : null);
+    } catch {
+      setCurrentUser(null);
+    }
+  }, []);
 
   const navigation = [
     { name: "Home", href: "/" },
