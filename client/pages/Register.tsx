@@ -31,35 +31,27 @@ export default function Register() {
     }
 
     setLoading(true);
-    setTimeout(() => {
-      const usersRaw = localStorage.getItem("cp_users");
-      const users = usersRaw ? JSON.parse(usersRaw) : [];
-      if (users.find((u: any) => u.email === email)) {
-        toast({ title: "Account exists", description: "An account with this email already exists.", duration: 4000 });
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, email, password, institution, qualification, percentage, graduationYear, skills: skills.split(',').map(s => s.trim()).filter(Boolean) })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast({ title: 'Registration failed', description: data.message || 'Could not create account', duration: 4000 });
         setLoading(false);
         return;
       }
-
-      const newUser = {
-        id: Date.now(),
-        fullName,
-        email,
-        password,
-        institution,
-        qualification,
-        percentage,
-        graduationYear,
-        skills: skills.split(",").map((s) => s.trim()).filter(Boolean),
-        createdAt: new Date().toISOString(),
-      };
-
-      users.push(newUser);
-      localStorage.setItem("cp_users", JSON.stringify(users));
-      localStorage.setItem("cp_current", JSON.stringify(newUser));
-      toast({ title: "Account created", description: "Welcome! Your profile has been created.", duration: 3000 });
-      setLoading(false);
+      localStorage.setItem('cp_token', data.token);
+      localStorage.setItem('cp_current', JSON.stringify(data.user));
+      toast({ title: 'Account created', description: 'Welcome! Your profile has been created.', duration: 3000 });
       navigate('/profile');
-    }, 600);
+    } catch (err) {
+      toast({ title: 'Network error', description: 'Could not reach server', duration: 4000 });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
