@@ -24,13 +24,20 @@ export default function Layout({ children }: LayoutProps) {
   const [currentUser, setCurrentUser] = useState<any | null>(null);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem('cp_current');
-      setCurrentUser(raw ? JSON.parse(raw) : null);
-    } catch {
-      setCurrentUser(null);
+    function refresh() {
+      try {
+        const raw = localStorage.getItem('cp_current');
+        setCurrentUser(raw ? JSON.parse(raw) : null);
+      } catch {
+        setCurrentUser(null);
+      }
     }
-  }, []);
+    // initial
+    refresh();
+    // update on storage events (other tabs)
+    window.addEventListener('storage', refresh);
+    return () => window.removeEventListener('storage', refresh);
+  }, [location.pathname]);
 
   const navigation = [
     { name: "Home", href: "/" },
