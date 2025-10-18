@@ -47,8 +47,9 @@ export default function Register() {
       localStorage.setItem('cp_current', JSON.stringify(data.user));
       toast({ title: 'Account created', description: 'Welcome! Your profile has been created.', duration: 3000 });
       navigate('/profile');
-    } catch (err) {
-      toast({ title: 'Network error', description: 'Could not reach server', duration: 4000 });
+    } catch (err: any) {
+      const msg = err?.message || 'Could not reach server';
+      toast({ title: 'Network error', description: msg, duration: 4000 });
     } finally {
       setLoading(false);
     }
