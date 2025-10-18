@@ -125,15 +125,12 @@ export default function Index() {
               skills, identify opportunities, and provide personalized
               recommendations to accelerate your career growth.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-10 flex items-center justify-center">
               <Button asChild size="lg" className="text-lg px-8 py-6">
                 <Link to="/diagnostic">
                   Start Your Assessment
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                View Demo
               </Button>
             </div>
             <div className="mt-16 flow-root sm:mt-24">
