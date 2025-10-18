@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
 import {
   Brain,
   Target,
