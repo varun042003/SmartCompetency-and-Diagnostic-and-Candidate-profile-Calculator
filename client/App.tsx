@@ -13,6 +13,8 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const queryClient = new QueryClient();
 
