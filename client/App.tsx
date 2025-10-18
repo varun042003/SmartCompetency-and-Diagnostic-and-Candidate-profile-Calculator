@@ -50,6 +50,22 @@ const App = () => (
             }
           />
           <Route
+            path="/login"
+            element={
+              <Layout>
+                <Login />
+              </Layout>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <Layout>
+                <Register />
+              </Layout>
+            }
+          />
+          <Route
             path="/profile"
             element={
               <Layout>
