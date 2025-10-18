@@ -81,10 +81,26 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Auth Links */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link to="/login" className="text-sm text-muted-foreground hover:text-foreground">Login</Link>
-              <Button asChild size="sm">
-                <Link to="/register">Sign up</Link>
-              </Button>
+              {currentUser ? (
+                <>
+                  <span className="text-sm text-foreground">{currentUser.fullName || currentUser.email}</span>
+                  <Button size="sm" variant="outline" onClick={() => {
+                    localStorage.removeItem('cp_token');
+                    localStorage.removeItem('cp_current');
+                    setCurrentUser(null);
+                    navigate('/');
+                  }}>
+                    Sign out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login" className="text-sm text-muted-foreground hover:text-foreground">Login</Link>
+                  <Button asChild size="sm">
+                    <Link to="/register">Sign up</Link>
+                  </Button>
+                </>
+              )}
             </div>
 
             {/* Mobile menu button */}
