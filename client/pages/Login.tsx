@@ -31,8 +31,9 @@ export default function Login() {
       localStorage.setItem('cp_current', JSON.stringify(data.user));
       toast({ title: 'Welcome back', description: `Logged in as ${data.user.fullName || data.user.email}`, duration: 3000 });
       navigate('/dashboard');
-    } catch (err) {
-      toast({ title: 'Network error', description: 'Could not reach server', duration: 4000 });
+    } catch (err: any) {
+      const msg = err?.message || 'Could not reach server';
+      toast({ title: 'Network error', description: msg, duration: 4000 });
     } finally {
       setLoading(false);
     }
