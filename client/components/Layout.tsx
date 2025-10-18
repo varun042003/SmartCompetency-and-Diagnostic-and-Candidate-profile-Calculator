@@ -67,37 +67,9 @@ export default function Layout({ children }: LayoutProps) {
               ))}
             </div>
 
-            {/* User Menu */}
+            {/* User Menu (simplified for student demo) */}
             <div className="hidden md:flex items-center space-x-4">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="relative h-8 w-8 rounded-full"
-                  >
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback>JD</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuItem asChild>
-                    <Link to="/profile" className="flex items-center">
-                      <User className="mr-2 h-4 w-4" />
-                      Profile
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Settings className="mr-2 h-4 w-4" />
-                    Settings
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    Sign out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <Link to="/profile" className="text-sm text-muted-foreground hover:text-foreground">Profile</Link>
             </div>
 
             {/* Mobile menu button */}
@@ -125,34 +97,10 @@ export default function Layout({ children }: LayoutProps) {
                       </Link>
                     ))}
                     <div className="pt-4 border-t">
-                      <div className="flex items-center space-x-3 px-3 py-2">
-                        <Avatar className="h-8 w-8">
-                          <AvatarFallback>JD</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="text-sm font-medium">John Doe</p>
-                          <p className="text-xs text-muted-foreground">
-                            john@example.com
-                          </p>
-                        </div>
-                      </div>
+                      <div className="px-3 py-2 text-sm text-muted-foreground">Student project demo — no real user accounts.</div>
                       <div className="mt-2 space-y-1">
-                        <Link
-                          to="/profile"
-                          onClick={() => setIsOpen(false)}
-                          className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md"
-                        >
-                          <User className="mr-2 h-4 w-4" />
-                          Profile
-                        </Link>
-                        <button className="flex items-center w-full px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md">
-                          <Settings className="mr-2 h-4 w-4" />
-                          Settings
-                        </button>
-                        <button className="flex items-center w-full px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md">
-                          <LogOut className="mr-2 h-4 w-4" />
-                          Sign out
-                        </button>
+                        <Link to="/profile" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md">Profile</Link>
+                        <Link to="/dashboard" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md">Dashboard</Link>
                       </div>
                     </div>
                   </div>
@@ -259,7 +207,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
           <div className="border-t pt-8 mt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 CompetencyPro. All rights reserved.</p>
+            <p>Student project demo — for portfolio and learning purposes.</p>
           </div>
         </div>
       </footer>
