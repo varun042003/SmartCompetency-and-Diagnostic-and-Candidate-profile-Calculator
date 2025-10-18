@@ -1,26 +1,3 @@
-import { Link } from "react-router-dom";
-import {
-  User,
-  Mail,
-  MapPin,
-  Calendar,
-  Award,
-  ChevronRight,
-  Edit,
-  Download,
-  Settings,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
