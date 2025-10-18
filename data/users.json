@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "fullName": "Varun T",
+    "email": "thippeswamyvarun20034@gmail.com",
+    "password": "$2a$08$CIPFPzUecTRiKtq/ukS37eDBbXPlXpSlhlFxB11J/4S0NLGkAD25i",
+    "institution": "Reva",
+    "qualification": "B.Tech",
+    "percentage": "8.9",
+    "graduationYear": "2026",
+    "skills": "HTML,CSS",
+    "createdAt": "2025-10-18T05:03:22.088Z"
+  }
+]
