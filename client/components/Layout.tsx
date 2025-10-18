@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
   useEffect(() => {
     function refresh() {
       try {
-        const raw = localStorage.getItem('cp_current');
+        const raw = localStorage.getItem("cp_current");
         setCurrentUser(raw ? JSON.parse(raw) : null);
       } catch {
         setCurrentUser(null);
@@ -35,8 +35,8 @@ export default function Layout({ children }: LayoutProps) {
     // initial
     refresh();
     // update on storage events (other tabs)
-    window.addEventListener('storage', refresh);
-    return () => window.removeEventListener('storage', refresh);
+    window.addEventListener("storage", refresh);
+    return () => window.removeEventListener("storage", refresh);
   }, [location.pathname]);
 
   const navigation = [
@@ -90,19 +90,30 @@ export default function Layout({ children }: LayoutProps) {
             <div className="hidden md:flex items-center space-x-4">
               {currentUser ? (
                 <>
-                  <span className="text-sm text-foreground">{currentUser.fullName || currentUser.email}</span>
-                  <Button size="sm" variant="outline" onClick={() => {
-                    localStorage.removeItem('cp_token');
-                    localStorage.removeItem('cp_current');
-                    setCurrentUser(null);
-                    navigate('/');
-                  }}>
+                  <span className="text-sm text-foreground">
+                    {currentUser.fullName || currentUser.email}
+                  </span>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      localStorage.removeItem("cp_token");
+                      localStorage.removeItem("cp_current");
+                      setCurrentUser(null);
+                      navigate("/");
+                    }}
+                  >
                     Sign out
                   </Button>
                 </>
               ) : (
                 <>
-                  <Link to="/login" className="text-sm text-muted-foreground hover:text-foreground">Login</Link>
+                  <Link
+                    to="/login"
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    Login
+                  </Link>
                   <Button asChild size="sm">
                     <Link to="/register">Sign up</Link>
                   </Button>
@@ -135,10 +146,24 @@ export default function Layout({ children }: LayoutProps) {
                       </Link>
                     ))}
                     <div className="pt-4 border-t">
-                      <div className="px-3 py-2 text-sm text-muted-foreground">Student project demo — no real user accounts.</div>
+                      <div className="px-3 py-2 text-sm text-muted-foreground">
+                        Student project demo — no real user accounts.
+                      </div>
                       <div className="mt-2 space-y-1">
-                        <Link to="/profile" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md">Profile</Link>
-                        <Link to="/dashboard" onClick={() => setIsOpen(false)} className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md">Dashboard</Link>
+                        <Link
+                          to="/profile"
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md"
+                        >
+                          Profile
+                        </Link>
+                        <Link
+                          to="/dashboard"
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md"
+                        >
+                          Dashboard
+                        </Link>
                       </div>
                     </div>
                   </div>

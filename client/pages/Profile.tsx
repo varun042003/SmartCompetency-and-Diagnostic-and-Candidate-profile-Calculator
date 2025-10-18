@@ -48,14 +48,22 @@ export default function Profile() {
           localStorage.setItem("cp_current", JSON.stringify(data.user));
         }
       } catch (err) {
-        toast({ title: "Could not load profile", description: "Server unreachable.", duration: 3000 });
+        toast({
+          title: "Could not load profile",
+          description: "Server unreachable.",
+          duration: 3000,
+        });
       }
     }
     load();
   }, []);
 
   const initials = user?.fullName
-    ? user.fullName.split(" ").map((n: string) => n[0]).slice(0, 2).join("")
+    ? user.fullName
+        .split(" ")
+        .map((n: string) => n[0])
+        .slice(0, 2)
+        .join("")
     : "U";
 
   return (
@@ -64,7 +72,9 @@ export default function Profile() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Your Profile</h1>
-          <p className="text-muted-foreground">Manage your competency profile and track your career development</p>
+          <p className="text-muted-foreground">
+            Manage your competency profile and track your career development
+          </p>
         </div>
 
         {/* Profile Overview */}
@@ -76,7 +86,9 @@ export default function Profile() {
               </Avatar>
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  <h2 className="text-2xl font-bold">{user?.fullName || "Unnamed User"}</h2>
+                  <h2 className="text-2xl font-bold">
+                    {user?.fullName || "Unnamed User"}
+                  </h2>
                   <Badge variant="secondary">Member</Badge>
                 </div>
                 <div className="space-y-2 text-muted-foreground">
@@ -90,7 +102,11 @@ export default function Profile() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
-                    <span>{user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : "-"}</span>
+                    <span>
+                      {user?.createdAt
+                        ? new Date(user.createdAt).toLocaleDateString()
+                        : "-"}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -109,7 +125,9 @@ export default function Profile() {
               <CardHeader className="text-center">
                 <Download className="h-8 w-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">Download Resume</CardTitle>
-                <CardDescription>Get your AI-generated professional resume</CardDescription>
+                <CardDescription>
+                  Get your AI-generated professional resume
+                </CardDescription>
               </CardHeader>
             </Link>
           </Card>
@@ -119,7 +137,9 @@ export default function Profile() {
               <CardHeader className="text-center">
                 <Award className="h-8 w-8 text-accent mx-auto mb-2" />
                 <CardTitle className="text-lg">Retake Assessment</CardTitle>
-                <CardDescription>Update your competency profile</CardDescription>
+                <CardDescription>
+                  Update your competency profile
+                </CardDescription>
               </CardHeader>
             </Link>
           </Card>
@@ -139,9 +159,13 @@ export default function Profile() {
             <div className="mx-auto w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4">
               <User className="h-8 w-8 text-muted-foreground" />
             </div>
-            <CardTitle className="text-2xl">Detailed Profile Coming Soon</CardTitle>
+            <CardTitle className="text-2xl">
+              Detailed Profile Coming Soon
+            </CardTitle>
             <CardDescription className="max-w-md mx-auto">
-              Your comprehensive profile will include competency scores, skill breakdowns, achievement badges, and detailed career development recommendations.
+              Your comprehensive profile will include competency scores, skill
+              breakdowns, achievement badges, and detailed career development
+              recommendations.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -151,34 +175,43 @@ export default function Profile() {
                   <Award className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-medium">Competency Scores</h4>
-                    <p className="text-sm text-muted-foreground">Detailed breakdown by skill category</p>
+                    <p className="text-sm text-muted-foreground">
+                      Detailed breakdown by skill category
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <User className="h-5 w-5 text-accent mt-0.5" />
                   <div>
                     <h4 className="font-medium">Achievement Badges</h4>
-                    <p className="text-sm text-muted-foreground">Certificates and milestones</p>
+                    <p className="text-sm text-muted-foreground">
+                      Certificates and milestones
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Calendar className="h-5 w-5 text-info mt-0.5" />
                   <div>
                     <h4 className="font-medium">Progress Timeline</h4>
-                    <p className="text-sm text-muted-foreground">Track your development journey</p>
+                    <p className="text-sm text-muted-foreground">
+                      Track your development journey
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-secondary/50">
                   <Settings className="h-5 w-5 text-warning mt-0.5" />
                   <div>
                     <h4 className="font-medium">Personalized Goals</h4>
-                    <p className="text-sm text-muted-foreground">Custom career objectives</p>
+                    <p className="text-sm text-muted-foreground">
+                      Custom career objectives
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="pt-6">
                 <Button asChild>
-                  <Link to="/diagnostic">Complete Assessment First
+                  <Link to="/diagnostic">
+                    Complete Assessment First
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

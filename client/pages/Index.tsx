@@ -127,16 +127,24 @@ export default function Index() {
               recommendations to accelerate your career growth.
             </p>
             <div className="mt-10 flex items-center justify-center">
-              <Button onClick={() => {
-                const current = localStorage.getItem('cp_current');
-                if (current) {
-                  // already logged in
-                  window.location.href = '/diagnostic';
-                } else {
-                  toast({ title: 'Sign in required', description: 'Please sign in to start the assessment.', duration: 3500 });
-                  window.location.href = '/login';
-                }
-              }} size="lg" className="text-lg px-8 py-6">
+              <Button
+                onClick={() => {
+                  const current = localStorage.getItem("cp_current");
+                  if (current) {
+                    // already logged in
+                    window.location.href = "/diagnostic";
+                  } else {
+                    toast({
+                      title: "Sign in required",
+                      description: "Please sign in to start the assessment.",
+                      duration: 3500,
+                    });
+                    window.location.href = "/login";
+                  }
+                }}
+                size="lg"
+                className="text-lg px-8 py-6"
+              >
                 Start Your Assessment
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
@@ -339,15 +347,23 @@ export default function Index() {
               towards accelerating your career growth.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button onClick={() => {
-                const current = localStorage.getItem('cp_current');
-                if (current) {
-                  window.location.href = '/diagnostic';
-                } else {
-                  toast({ title: 'Sign in required', description: 'Please sign in to start the assessment.', duration: 3500 });
-                  window.location.href = '/login';
-                }
-              }} size="lg" className="text-lg px-8 py-6">
+              <Button
+                onClick={() => {
+                  const current = localStorage.getItem("cp_current");
+                  if (current) {
+                    window.location.href = "/diagnostic";
+                  } else {
+                    toast({
+                      title: "Sign in required",
+                      description: "Please sign in to start the assessment.",
+                      duration: 3500,
+                    });
+                    window.location.href = "/login";
+                  }
+                }}
+                size="lg"
+                className="text-lg px-8 py-6"
+              >
                 Get Started Now
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
