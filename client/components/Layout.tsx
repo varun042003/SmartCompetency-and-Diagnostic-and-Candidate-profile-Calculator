@@ -206,9 +206,6 @@ export default function Layout({ children }: LayoutProps) {
               </ul>
             </div>
           </div>
-          <div className="border-t pt-8 mt-8 text-center text-muted-foreground">
-            <p>Student project demo — for portfolio and learning purposes.</p>
-          </div>
         </div>
       </footer>
     </div>
