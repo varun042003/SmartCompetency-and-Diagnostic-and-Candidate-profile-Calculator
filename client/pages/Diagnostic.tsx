@@ -115,6 +115,17 @@ const sampleQuestions: Question[] = [
 ];
 
 export default function Diagnostic() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const current = localStorage.getItem('cp_current');
+    if (!current) {
+      toast({ title: 'Sign in required', description: 'Please sign in to access the diagnostic.', duration: 3500 });
+      navigate('/login');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const [currentStep, setCurrentStep] = useState<"intro" | "test" | "results">(
     "intro",
   );
