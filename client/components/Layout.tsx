@@ -67,9 +67,12 @@ export default function Layout({ children }: LayoutProps) {
               ))}
             </div>
 
-            {/* User Menu (simplified for student demo) */}
+            {/* Auth Links */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link to="/profile" className="text-sm text-muted-foreground hover:text-foreground">Profile</Link>
+              <Link to="/login" className="text-sm text-muted-foreground hover:text-foreground">Login</Link>
+              <Button asChild size="sm">
+                <Link to="/register">Sign up</Link>
+              </Button>
             </div>
 
             {/* Mobile menu button */}
