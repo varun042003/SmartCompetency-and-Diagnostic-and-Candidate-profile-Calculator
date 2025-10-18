@@ -12,30 +12,30 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
-    setTimeout(() => {
-      const usersRaw = localStorage.getItem("cp_users");
-      const users = usersRaw ? JSON.parse(usersRaw) : [];
-      const user = users.find((u: any) => u.email === email);
-      if (!user) {
-        toast({ title: "No account found", description: "Please register first.", duration: 4000 });
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        toast({ title: 'Login failed', description: data.message || 'Invalid credentials', duration: 4000 });
         setLoading(false);
         return;
       }
-      if (user.password !== password) {
-        toast({ title: "Invalid credentials", description: "Email or password is incorrect.", duration: 4000 });
-        setLoading(false);
-        return;
-      }
-
-      localStorage.setItem("cp_current", JSON.stringify(user));
-      toast({ title: "Welcome back", description: `Logged in as ${user.fullName || user.email}`, duration: 3000 });
-      setLoading(false);
+      localStorage.setItem('cp_token', data.token);
+      localStorage.setItem('cp_current', JSON.stringify(data.user));
+      toast({ title: 'Welcome back', description: `Logged in as ${data.user.fullName || data.user.email}`, duration: 3000 });
       navigate('/dashboard');
-    }, 600);
+    } catch (err) {
+      toast({ title: 'Network error', description: 'Could not reach server', duration: 4000 });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
