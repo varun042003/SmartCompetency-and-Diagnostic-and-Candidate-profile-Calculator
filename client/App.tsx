@@ -25,7 +25,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
+        <ErrorBoundary>
+          <Routes>
           <Route
             path="/"
             element={
@@ -92,6 +93,7 @@ const App = () => (
             }
           />
         </Routes>
+      </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
