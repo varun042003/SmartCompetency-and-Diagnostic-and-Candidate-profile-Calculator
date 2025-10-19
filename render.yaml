@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: fusion-starter
+    env: node
+    plan: starter
+    region: oregon
+    branch: main
+    buildCommand: "npm ci && npm run build"
+    startCommand: "npm run start"
+    autoDeploy: true
+    disk: 1024
+    envVars: []
