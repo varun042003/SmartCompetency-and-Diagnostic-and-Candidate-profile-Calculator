@@ -21,7 +21,9 @@ async function loadCreateServer(): Promise<{ createServer: () => any }> {
       // eslint-disable-next-line no-await-in-loop
       const mod = await import(p as string);
       if (mod && (mod.createServer || mod.default?.createServer)) {
-        return { createServer: mod.createServer || mod.default.createServer } as any;
+        return {
+          createServer: mod.createServer || mod.default.createServer,
+        } as any;
       }
     } catch (err) {
       // skip
