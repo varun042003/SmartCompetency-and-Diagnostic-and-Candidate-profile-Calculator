@@ -3,12 +3,13 @@ import path from "path";
 import os from "os";
 
 // Use DATA_DIR env var if provided. In serverless (Vercel) use OS temp dir to ensure writable path.
-const useTmpForServerless = !!process.env.VERCEL || process.env.NODE_ENV === "production";
+const useTmpForServerless =
+  !!process.env.VERCEL || process.env.NODE_ENV === "production";
 const baseDir = process.env.DATA_DIR
   ? path.resolve(process.env.DATA_DIR)
   : useTmpForServerless
-  ? path.join(os.tmpdir(), "competencypro_data")
-  : path.resolve(process.cwd(), "data");
+    ? path.join(os.tmpdir(), "competencypro_data")
+    : path.resolve(process.cwd(), "data");
 
 if (!fs.existsSync(baseDir)) {
   try {
@@ -66,7 +67,9 @@ export function createUser(user: {
     throw new Error("User already exists");
   }
 
-  const id = users.length ? Math.max(...users.map((u) => Number(u.id) || 0)) + 1 : 1;
+  const id = users.length
+    ? Math.max(...users.map((u) => Number(u.id) || 0)) + 1
+    : 1;
   const newUser = {
     id,
     fullName: user.fullName,
@@ -76,7 +79,11 @@ export function createUser(user: {
     qualification: user.qualification ?? null,
     percentage: user.percentage ?? null,
     graduationYear: user.graduationYear ?? null,
-    skills: Array.isArray(user.skills) ? user.skills : (user.skills ? [user.skills] : []),
+    skills: Array.isArray(user.skills)
+      ? user.skills
+      : user.skills
+        ? [user.skills]
+        : [],
     createdAt: new Date().toISOString(),
   };
 
