@@ -37,12 +37,27 @@ export default function Register() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fullName, email, password, institution, qualification, percentage, graduationYear, skills: skills.split(',').map(s => s.trim()).filter(Boolean) })
       });
-      const data = await res.json();
+
+      const ct = res.headers.get('content-type') || '';
+      let data: any = null;
+      if (ct.includes('application/json')) {
+        try {
+          data = await res.json();
+        } catch (e) {
+          data = { message: 'Invalid JSON response from server' };
+        }
+      } else {
+        const text = await res.text();
+        data = { message: text };
+      }
+
       if (!res.ok) {
-        toast({ title: 'Registration failed', description: data.message || 'Could not create account', duration: 4000 });
+        const msg = data?.message || `Server returned ${res.status}`;
+        toast({ title: 'Registration failed', description: String(msg).slice(0, 200), duration: 6000 });
         setLoading(false);
         return;
       }
+
       localStorage.setItem('cp_token', data.token);
       localStorage.setItem('cp_current', JSON.stringify(data.user));
       toast({ title: 'Account created', description: 'Welcome! Your profile has been created.', duration: 3000 });
